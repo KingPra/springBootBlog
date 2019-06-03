@@ -2,10 +2,23 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<title>blog site</title>
+		<link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	</head>
 	<body>
-		<h1>Hello Bloggers</h1>
+	<div class="container">
+			<h1>Hello Bloggers</h1>
+			<h3>Check Out Our Blog Post</h3>
+			<div class="row">
+				<div th:each="blog:${posts}">
+					<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		<p>Please use the form below to submit a blog post</p>
 		<form action="#" th:action="@{/}" th:object="${blogPost}" method="post">
 			<table>
@@ -26,5 +39,8 @@
 				</tr>
 			</table>
 		</form>
+	</div>
+		<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 	</body>
 </html>
